@@ -1,5 +1,5 @@
 mongo_logappend: true
-mongo_version: 2.4.7
+mongo_version: 2.6.4
 mongo_port: "27017"
 mongo_extra_conf: ''
 mongo_key_file: '/etc/mongodb_key'
@@ -10,6 +10,9 @@ mongo_data_dir: "{{ COMMON_DATA_DIR }}/mongo"
 mongo_log_dir: "{{ COMMON_LOG_DIR }}/mongo"
 mongo_user: mongodb
 
+monogo_pymongo_version: 2.7.2
+
+MONGODB_APT_ID: 7F0CEB10
 MONGODB_APT_KEY: "http://docs.mongodb.org/10gen-gpg-key.asc"
 MONGODB_REPO: "deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen"
 
@@ -59,4 +62,3 @@ mongo_s3_logfile: "{{ COMMON_LOG_DIR }}/mongo/s3-mongo-backup.log"
 MONGO_S3_S3CMD_CONFIG: "{{ COMMON_DATA_DIR }}/mongo-s3-backup.s3cfg"
 MONGO_S3_BACKUP_AWS_ACCESS_KEY: !!null
 MONGO_S3_BACKUP_AWS_SECRET_KEY: !!null
-
