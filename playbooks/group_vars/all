@@ -1,6 +1,11 @@
+##############################################################
+#Common
 
 COMMON_GIT_MIRROR: 'github.com'
 COMMON_SSH_PASSWORD_AUTH: "yes"
+
+##############################################################
+#Edxapp
 
 EDXAPP_AWS_ACCESS_KEY_ID:  "YOUR_ID"
 EDXAPP_AWS_SECRET_ACCESS_KEY:  "YOUR_KEY"
@@ -52,6 +57,9 @@ configuration_version: master
 
 discern_nltk_download_url: ftp://ftp.bistu.edu.cn/OpenSource/nltk_data/nltk-data-20131113.tar.gz
 
+##############################################################
+#Nltk
+
 NLTK_DATA:
   - { path: "taggers/maxent_treebank_pos_tagger",
       url: "ftp://ftp.bistu.edu.cn/OpenSource/nltk_data/maxent_treebank_pos_tagger.zip" }
@@ -59,3 +67,23 @@ NLTK_DATA:
       url: "ftp://ftp.bistu.edu.cn/OpenSource/nltk_data/stopwords.zip" }
   - { path: "corpora/wordnet",
       url: "ftp://ftp.bistu.edu.cn/OpenSource/nltk_data/wordnet.zip" }
+
+##############################################################
+#Certs      
+
+CERTS_QUEUE_URL: "http://localhost:18040"
+CERTS_REPO: "https://github.com/edx/read-only-certificate-code"
+CERTS_NGINX_PORT: 18090
+CERTS_WEB_ROOT: "{{ certs_data_dir }}/www-data"
+CERTS_URL: "http://x1.hubu.edu.cn:{{ CERTS_NGINX_PORT }}"
+CERTS_DOWNLOAD_URL: "http://x1.hubu.edu.cn:{{ CERTS_NGINX_PORT }}"
+CERTS_VERIFY_URL: "http://x1.hubu.edu.cn:{{ CERTS_NGINX_PORT }}"
+
+##############################################################
+#Xserver
+
+XSERVER_GRADER_DIR: "{{ xserver_data_dir }}/data/content-test-xserver"
+XSERVER_GRADER_SOURCE: "https://github.com/antoviaque/xserver-grader.git"
+XSERVER_LOCAL_GIT_IDENTITY: "{{ secure_dir }}/files/git-identity"
+XSERVER_GIT_IDENTITY: "{{ secure_dir }}/files/git-identity"
+XSERVER_NGINX_PORT: 18050
